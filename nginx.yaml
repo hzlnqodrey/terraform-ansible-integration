@@ -1,7 +1,7 @@
 ---
 - name: Install NGINX
   hosts: all
-  remote_user: ansible
+  remote_user: qodri123
   become: yes
 
   roles:
