@@ -68,3 +68,8 @@ resource "google_compute_instance" "nginx" {
     command = "ansible-playbook -i '${google_compute_instance.nginx.network_interface[0].access_config[0].nat_ip}, --private-key ${local.private_key_path} nginx.yaml'"
   }
 }
+
+# add output for convenience in CLI
+output "nginx_ip" {
+  value = google_compute_instance.nginx.network_interface[0].access_config[0].nat_ip
+}
